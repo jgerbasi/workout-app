@@ -1,16 +1,12 @@
+<!DOCTYPE html>
 <html>
-	<body>
-		<p> Make sure you are running mongod</p>
-		<p>Usage is /:db/:collection/:operation</p>
-		<p> For find and insert, add a query string </p>
-		<p> Examples</p>
-		<p> http://localhost:3333/myProducts/fruit/insert?name=pear&price=2</p>
-		<p> http://localhost:3333/myProducts/fruit/find?name=pear</p>
-		</p>
-			</br>
-			<p> For update, use the following form:</p><p>http://localhost:3333/myProducts/fruit/update?find={"name":"pineapple"}&update={"$set":{"leaves":"green"}}</p>
-			<p> The use of double quotes here is very deliberate, and no single quotes are allowed.</p>
-	</body>
+<head>
+    <title> Welcome! </title>
+
+    <script src="/logout.js"></script>
+</head>
+<body>
+    <h1> My App Home Page </h1>
+    <button id="logoutButton"> logout </button>
+</body>
 </html>
-
-
