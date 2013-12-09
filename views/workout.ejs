@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script src="/jquery-2.0.3.min.js"></script>
+    <script src="/session.js"></script>
+  </head>
+  <body>
+    <h1><%= obj.name %> Workout</h1>
+    <h2>Started: <span id="date"></span></h2>
+    <p>Rest Timer:<span><%= obj.exercises[0].rest %></p>
+    <table id="sessionTable">
+      <tr>
+        <th>Exercise</th>
+        <th>Set 1</th>
+        <th>Set 2</th>
+        <th>Set 3</th>
+        <th>Set 4</th>
+        <th>Set 5</th>
+      </tr>
+      <% obj.exercises.forEach(function(exercise) { %>
+        <tr class="exercise">
+          <td class="exerciseName"><%= exercise.name %></td>
+          <% for (var i = 0; i < exercise.sets; i++) { %>
+            <td class="exerciseSets">
+              <input class="exerciseReps"></input>x<input class="exerciseWeight"></input>
+            </td>
+          <% } %>
+        </tr>
+      <% }); %>
+    </table>
+    <button id="finishWorkout">Finish Workout</button>
+  </body>
+</html>

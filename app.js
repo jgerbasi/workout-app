@@ -22,52 +22,50 @@ app.configure(function(){
 //  init
 //===========================
 mongoExpressAuth.init({
-    mongo: { 
-        dbName: 'workoutApp',
-        collectionName: 'users'
-    }
+  mongo: { 
+    dbName: 'workoutApp',
+    collectionName: 'users'
+  }
 }, function(){
-    console.log('mongo ready!');
+    console.log('Mongo ready!\n Server running on port: 3000');
     app.listen(3000);
 });
 
-// Routes
-
+// Routes (auth based)
 app.get('/', function(req, res){
-    mongoExpressAuth.checkLogin(req, res, function(err){
-        if (err)
-            res.send('ok');
-        else
-            routes.index(req, res);
-    });
+  mongoExpressAuth.checkLogin(req, res, function(err){
+    if (err)
+      res.send('You are not logged in!');
+    else
+      routes.index(req, res);
+  });
 });
 
-// app.get('/', routes.index);
-app.get('/:db/:collection/:operation', routes.mongo);
-
 app.post('/login', function(req, res){
-    mongoExpressAuth.login(req, res, function(err){
-        if (err)
-            res.send(err);
-        else
-            res.send('ok');
-    });
+  mongoExpressAuth.login(req, res, function(err){
+    if (err)
+      res.send(err);
+    else
+      res.send('ok');
+  });
 });
 
 app.post('/logout', function(req, res){
-    mongoExpressAuth.logout(req, res);
-    res.send('ok');
+  mongoExpressAuth.logout(req, res);
+  res.send('ok');
 });
 
 app.post('/register', function(req, res){
-    mongoExpressAuth.register(req, function(err){
-        if (err)
-            res.send(err);
-        else
-            res.send('ok');
-    });
+  mongoExpressAuth.register(req, function(err){
+    if (err)
+      res.send(err);
+    else
+      res.send('ok');
+  });
 });
 
-
-app.listen(3333);
-console.log("Express server listening to 3333");
+app.get('/workouts/new', routes.newWorkout);
+app.post('/workouts', routes.createWorkout);
+app.get('/workouts', routes.getWorkouts);
+app.get('/workouts/:id', routes.getWorkout);
+app.post('/sessions', routes.createSession);

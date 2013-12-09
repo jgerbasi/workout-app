@@ -1,36 +1,52 @@
 var mongo = require("../models/mymongo.js");
 
 exports.index = function(req, res) {
-  res.render('index', {title: 'MongoDB Test'})
+	mongo.find(
+							req.session.username,
+							function(model) {
+								res.render('index', {title: 'Welcome to the Workout App', workouts: model[0].workouts});
+							}
+						);
 };
 
-// /:db/:collection/:operation
-exports.mongo = function(req, res){
-	switch (req.params.operation) {
-		case 'insert':	mongo.insert( req.params.db, 
-		                              req.params.collection, 
-		                              req.query,
-		                              function(model) {
-		                                res.render('mongo', {title: 'Mongo Demo', obj: model});
-		                                }
-		                              );
-									 	break;
-		case 'find':		mongo.find( req.params.db, 
-		                              req.params.collection, 
-		                              req.query,
-		                              function(model) {
-              											res.render('mongo',{title: 'Mongo Demo', obj: model});
-		                                }
-		                              );
-									 	break;
-		case 'update':	mongo.update( req.params.db, 
-		                              req.params.collection, 
-		                              req.query,
-		                              function(model) {
-              											res.render('success',{title: 'Mongo Demo', obj: model});
-		                                }
-		                              );
-									 	break;
-		}
-	}
-	
+exports.newWorkout = function(req, res) {
+	res.render('new', {title: 'New Workout'});
+};
+
+exports.createWorkout = function(req, res) {
+	mongo.update( 
+								req.session.username, 
+								req.body,
+								function(model) {
+									res.end("Successfully posted new workout");
+								}
+							);
+};
+
+exports.getWorkouts = function(req, res) {
+	mongo.find(
+							req.session.username,
+							function(model) {
+								res.render('mongo', {title: 'Viewing Workouts', obj: model});
+							}
+						);
+};
+
+exports.getWorkout = function(req, res) {
+	mongo.find(
+											req.session.username,
+											function(model) {
+												res.render('workout', {title: 'Viewing Workout', obj: model[0].workouts[req.params.id]});
+											}
+										);
+};
+
+exports.createSession = function(req, res) {
+	mongo.updateSession( 
+							req.session.username, 
+							req.body,
+							function(model) {
+								res.end("Successfully posted new session");
+							}
+						);
+}
