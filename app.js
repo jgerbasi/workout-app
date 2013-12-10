@@ -23,12 +23,14 @@ app.configure(function(){
 //===========================
 mongoExpressAuth.init({
   mongo: { 
+    host: 'ds047008.mongolab.com',
+    port: 47008,
     dbName: 'workoutApp',
     collectionName: 'users'
   }
 }, function(){
     console.log('Mongo ready!\n Server running on port: 80');
-    app.listen(80);
+    app.listen(3000);
 });
 
 // Routes (auth based)

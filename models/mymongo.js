@@ -8,28 +8,6 @@ var doError = function (e) {
 	throw new Error(e);
 	}
 
-// INSERT
-// exports.insert = function(collection, query, callback) {
-//   mongoClient.connect(database, function(err, db) {
-//     if (err) doError(err);
-//     db.collection(collection).insert(query, {safe:true}, function(err, crsr) {
-//       callback(crsr);
-//   		});
-//   	});
-//   }
-				
-// // FIND
-// exports.find = function(collection, query, callback) {
-//   mongoClient.connect(database, function(err, db) {
-//     if (err) doError(err);
-//     var crsr = db.collection(collection).find(query);
-//       crsr.toArray(function(err, docs) {
-//         if (err) doError(err);
-//         callback(docs);
-//         });
-//   		});
-//   	}
-
 // Get user's workouts
 exports.find = function(user, callback) {
   mongoClient.connect(database, function(err, db) {
@@ -41,12 +19,6 @@ exports.find = function(user, callback) {
     });
   });
 }
-
-// exports.getWorkout = function(user, workout, callback) {
-//   mongoClient.connect(database, function(err, db) {
-//     if (err) doError
-//   });
-// }
 
 // Add new workout for user
 exports.update = function(user, workout, callback) {
