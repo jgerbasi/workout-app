@@ -1,9 +1,13 @@
 var express = require('express')
   , routes = require('./routes')
 
+  // CREDIT FOR MAIN AUTH MODULE (GUTTED BY ME TO WORK WITH NODEJITSU)
+  // https://github.com/es92/mongo-express-auth
+  , mongoExpressAuth = require('./auth/mongoExpressAuth');
+
 var app = express();
 
-var mongoExpressAuth = require('mongo-express-auth');
+// var mongoExpressAuth = require('mongo-express-auth');
   
 // Configuration
 app.configure(function(){
@@ -66,8 +70,48 @@ app.post('/register', function(req, res){
   });
 });
 
-app.get('/workouts/new', routes.newWorkout);
-app.post('/workouts', routes.createWorkout);
-app.get('/workouts', routes.getWorkouts);
-app.get('/workouts/:id', routes.getWorkout);
-app.post('/sessions', routes.createSession);
+app.get('/workouts/new', function(req, res){
+  mongoExpressAuth.checkLogin(req, res, function(err){
+    if (err)
+      res.send("You need to be logged in to access this!");
+    else
+      routes.newWorkout(req, res);
+  });
+});
+
+app.get('/workouts/:id', function(req, res){
+  mongoExpressAuth.checkLogin(req, res, function(err){
+    if (err)
+      res.send("You need to be logged in to access this!");
+    else
+      routes.getWorkout(req, res);
+  });
+});
+
+app.get('/workouts', function(req, res){
+  mongoExpressAuth.checkLogin(req, res, function(err){
+    if (err)
+      res.send("You need to be logged in to access this!");
+    else
+      routes.getWorkouts(req, res);
+  });
+});
+
+
+app.post('/workouts', function(req, res){
+  mongoExpressAuth.checkLogin(req, res, function(err){
+    if (err)
+      res.send("You need to be logged in to access this!");
+    else
+      routes.createWorkout(req, res);
+  });
+});
+
+app.post('/sessions', function(req, res){
+  mongoExpressAuth.checkLogin(req, res, function(err){
+    if (err)
+      res.send("You need to be logged in to access this!");
+    else
+      routes.createSession(req, res);
+  });
+});

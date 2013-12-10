@@ -49,7 +49,7 @@ $(document).ready(function() {
       },
     });
   });
-  $('#what').click(function() {
+  $('#searchSpotify').click(function() {
     var song = $('#spotifySearch').val();
     var url = "http://ws.spotify.com/search/1/track?q=" + encodeURIComponent(song);
     $.get(url, function(data) {
