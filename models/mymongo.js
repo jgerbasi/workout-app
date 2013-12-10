@@ -1,6 +1,6 @@
 var util = require("util");
 var mongoClient = require("mongodb").MongoClient;
-var database = "mongodb://localhost:27017/workoutApp";
+var database = "mongodb://nodejitsu_jgerbasi:u4b2iojqfkf7kkn47tobmstqcl@ds047008.mongolab.com:47008/nodejitsu_jgerbasi_nodejitsudb9906382218";
 
 //db/:collection/:operation/:document
 var doError = function (e) {
