@@ -1,13 +1,18 @@
 {
-  "name": "MongoDB-Example",
+  "name": "Workout App",
+  "subdomain": "jgerbasi",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "app.js"
   },
   "dependencies": {
     "express": "3.0.x",
     "ejs": "*",
-		"mongodb": "1.2.x"
+		"mongodb": "1.2.x",
+    "mongo-express-auth": "*"
+  },
+  "engines": {
+    "node": ">=0.8"
   }
 }

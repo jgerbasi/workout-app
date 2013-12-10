@@ -2,25 +2,37 @@
 <head>
   <script src="/jquery-2.0.3.min.js"></script>
   <script src="/workout.js"></script>
+  <script src="/logout.js"></script>
+  <link rel="stylesheet" type="text/css" href="/login.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <h1> New Workout </h1>
-    <span> Workout Name: </span> <input id="workoutName"></input></br>
-    <div>
-      <table id="exerciseTable">
-        <tr>
-          <th>Exercise</th>
-          <th>Sets</th>
-          <th>Rest Time(s)</th>
-        </tr>
-        <tr class="exercise">
-          <td><input class="exerciseName"></input></td>
-          <td><input class="exerciseSets"></input></td>
-          <td><input class="exerciseRest"></input></td>
-        </tr>
-      </table>
+  <div class="main">
+    <div id="topNav">
+      <span> Welcome: <%= username %></span>
+      <a href="#" id="logoutButton"> logout </a>
     </div>
-    <button id="addExercise">Add New Exericse</button></br>
-    <button id="saveWorkout">Save Workout</button>
+    <div class="logo"></div>
+    <h1> New Workout </h1>
+    <div id="newWorkout">
+      <span> Workout Name: </span> <input id="workoutName"></input>
+      <div>
+        <table id="exerciseTable">
+          <tr>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Rest Time(s)</th>
+          </tr>
+          <tr class="exercise">
+            <td><input class="exerciseName"></input></td>
+            <td><input class="exerciseSets"></input></td>
+            <td><input class="exerciseRest"></input></td>
+          </tr>
+        </table>
+      </div>
+      <button id="addExercise">Add New Exericse</button></br>
+      <button id="saveWorkout">Save Workout</button>
+    </div>
+  </div>
 </body>
 </html>

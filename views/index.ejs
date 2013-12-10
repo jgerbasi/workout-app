@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Welcome! </title>
-    <script src="/jquery-2.0.3.min.js"></script>
-    <script src="/logout.js"></script>
-    <script src="/index.js"></script>
+  <title> Welcome! </title>
+  <script src="/jquery-2.0.3.min.js"></script>
+  <script src="/logout.js"></script>
+  <script src="/index.js"></script>
+  <link rel="stylesheet" type="text/css" href="/login.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <h1> Workout App </h1>
-    <a href="/workouts/new" id="createWorkout"> Create Workout </a>
-    <a href="/workouts" id="viewWorkouts"> View Past Workouts </a>
-    <select id="workoutDropdown">
-    	<% if (workouts) { %>	
-					<% workouts.forEach(function(workout, index) { %>
-						<!-- Dynamically add dropdown options getting the workout's index as the value, and the name as its label -->
-						<option value=<%= JSON.stringify(index) %>> <%= workout.name %></option>
-					<% }); %>
-			<% } %>
-    </select>
-    <button id="newSession"> Start Workout </button>
-    <button id="logoutButton"> logout </button>
+  <div class="main">
+    <div id="topNav">
+      <span> Welcome: <%= username %></span>
+      <a href="#" id="logoutButton"> logout </a>
+    </div>
+    <div class="logo"></div>
+    <h1> Main Menu </h1>
+    <div id="mainNav">
+      <span id="selectWorkout">Select Workout:</span>
+      <select id="workoutDropdown">
+        <% if (workouts) { %> 
+          <% workouts.forEach(function(workout, index) { %>
+            <!-- Dynamically add dropdown options getting the workout's index as the value, and the name as its label -->
+            <option value=<%= JSON.stringify(index) %>> <%= workout.name %></option>
+          <% }); %>
+        <% } %>
+      </select>
+      <button id="newSession"> Start Workout </button></br>
+      <a href="/workouts/new" id="createWorkout"> Create Workout </a>
+      <a href="/workouts" id="viewWorkouts"> View Past Sessions </a>
+    </div>
+  </div>
 </body>
 </html>

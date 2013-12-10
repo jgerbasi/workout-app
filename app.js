@@ -27,15 +27,15 @@ mongoExpressAuth.init({
     collectionName: 'users'
   }
 }, function(){
-    console.log('Mongo ready!\n Server running on port: 3000');
-    app.listen(3000);
+    console.log('Mongo ready!\n Server running on port: 80');
+    app.listen(80);
 });
 
 // Routes (auth based)
 app.get('/', function(req, res){
   mongoExpressAuth.checkLogin(req, res, function(err){
     if (err)
-      res.send('You are not logged in!');
+      routes.login(req, res);
     else
       routes.index(req, res);
   });

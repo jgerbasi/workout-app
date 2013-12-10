@@ -1,0 +1,156 @@
+body {
+  background-image: url('/images/background.jpg');
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.main {
+  width: 1024px;
+  margin: 25px auto;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  opacity: 0.8;
+  background-color: white;
+  padding-bottom: 5px;
+  font-size: 25px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 25px;
+}
+
+.logo {
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: url('/images/logo.png');
+}
+
+#loginContainer {
+  width: 400px;
+  margin: 25px auto;
+}
+
+input {
+  font-size: 22px;
+}
+
+#usernameField {
+  width: 500px;
+}
+
+#passwordField {
+  width: 500px;
+}
+
+#usernameInput {
+  margin-left: 5px;
+}
+
+.btn {
+  -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
+  background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
+  background-color:#f9f9f9;
+  -webkit-border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-left-radius:6px;
+  -webkit-border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-top-right-radius:6px;
+  -webkit-border-bottom-right-radius:6px;
+  -moz-border-radius-bottomright:6px;
+  border-bottom-right-radius:6px;
+  -webkit-border-bottom-left-radius:6px;
+  -moz-border-radius-bottomleft:6px;
+  border-bottom-left-radius:6px;
+  text-indent:0;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#666666;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:40px;
+  line-height:20px;
+  width:100px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #ffffff;
+}
+.btn:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9) );
+  background:-moz-linear-gradient( center top, #e9e9e9 5%, #f9f9f9 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9');
+  background-color:#e9e9e9;
+}.btn:active {
+  position:relative;
+  top:1px;
+}
+
+#authButtons {
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+#topNav {
+  float: right;
+  margin-right : 20px;
+  margin-top: 5px;
+}
+
+.sessionContainer {
+  border-bottom: 2px solid grey;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+h3 {
+  margin-top: 10px;
+  text-decoration: underline;
+  color: #0099CC;
+  margin-bottom: 0px;
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#mainNav {
+  width: 400px;
+  margin: 0 auto;
+}
+
+#createWorkout {
+  margin-right: 20px;
+}
+
+#selectWorkout {
+  margin-right: 15px;
+}
+
+#newWorkout {
+  margin-top: 20px;
+}
+
+#exerciseTable {
+  margin-top: 10px;
+}
+
+#sessionTable input {
+  width: 50px;
+  margin-right: 5px;
+  margin-left: 5px;
+}

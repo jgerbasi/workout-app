@@ -22,6 +22,7 @@ $(document).ready(function() {
   $('#finishWorkout').click(function() {
     // validation function call here
     var session = {}
+    session.name = $('#workoutName').html();
     session.date = currentdate;
     session.exercises = [];
     // Iterate through each row and push to the exercises array
@@ -46,6 +47,15 @@ $(document).ready(function() {
       complete: function(data){
         window.location = '/';
       },
+    });
+  });
+  $('#what').click(function() {
+    var song = $('#spotifySearch').val();
+    var url = "http://ws.spotify.com/search/1/track?q=" + encodeURIComponent(song);
+    $.get(url, function(data) {
+    var track = $($(data).find("track")[0]).attr('href');
+    var songUrl = "https://embed.spotify.com/?uri=" + track;
+    $('#spotify').attr('src', songUrl);
     });
   });
 });

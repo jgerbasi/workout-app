@@ -18,7 +18,7 @@ $(document).ready(function() {
       dataType: 'json',
       data: workout,
       complete: function(data){
-        window.location = '/workouts';
+        window.location = '/';
       },
     });
   });

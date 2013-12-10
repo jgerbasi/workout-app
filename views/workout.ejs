@@ -2,31 +2,44 @@
   <head>
     <script src="/jquery-2.0.3.min.js"></script>
     <script src="/session.js"></script>
+    <script src="/logout.js"></script>
+    <link rel="stylesheet" type="text/css" href="/login.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1><%= obj.name %> Workout</h1>
-    <h2>Started: <span id="date"></span></h2>
-    <p>Rest Timer:<span><%= obj.exercises[0].rest %></p>
-    <table id="sessionTable">
-      <tr>
-        <th>Exercise</th>
-        <th>Set 1</th>
-        <th>Set 2</th>
-        <th>Set 3</th>
-        <th>Set 4</th>
-        <th>Set 5</th>
-      </tr>
-      <% obj.exercises.forEach(function(exercise) { %>
-        <tr class="exercise">
-          <td class="exerciseName"><%= exercise.name %></td>
-          <% for (var i = 0; i < exercise.sets; i++) { %>
-            <td class="exerciseSets">
-              <input class="exerciseReps"></input>x<input class="exerciseWeight"></input>
-            </td>
-          <% } %>
+    <div class="main">
+      <div id="topNav">
+        <span> Welcome: <%= username %></span>
+        <a href="#" id="logoutButton"> logout </a>
+      </div>
+      <div class="logo"></div>
+      <h1><span id="workoutName"><%= obj.name %></span> Workout</h1>
+      <h3>Started: <span id="date"></span></h3>
+      <p>Rest Timer:<span><%= obj.exercises[0].rest %></p>
+      <table id="sessionTable">
+        <tr>
+          <th>Exercise</th>
+          <th>Set 1</th>
+          <th>Set 2</th>
+          <th>Set 3</th>
+          <th>Set 4</th>
+          <th>Set 5</th>
         </tr>
-      <% }); %>
-    </table>
-    <button id="finishWorkout">Finish Workout</button>
+        <% obj.exercises.forEach(function(exercise) { %>
+          <tr class="exercise">
+            <td class="exerciseName"><%= exercise.name %></td>
+            <% for (var i = 0; i < exercise.sets; i++) { %>
+              <td class="exerciseSets">
+                <input class="exerciseReps"></input>x<input class="exerciseWeight"></input>
+              </td>
+            <% } %>
+          </tr>
+        <% }); %>
+      </table>
+      <button id="finishWorkout">Finish Workout</button>
+      <input id="spotifySearch"></input>
+      <button id="what">Search</button>
+      <iframe id="spotify" src="https://embed.spotify.com/?uri=spotify:track:4bz7uB4edifWKJXSDxwHcs" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+    </div>
   </body>
 </html>
