@@ -1,9 +1,11 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0;">
     <script src="/jquery-2.0.3.min.js"></script>
     <script src="/session.js"></script>
     <script src="/logout.js"></script>
     <link rel="stylesheet" type="text/css" media="(min-width: 768px)" href="/desktop.css">
+    <link rel="stylesheet" type="text/css" media="(max-width: 768px)" href="/mobile.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
@@ -30,7 +32,7 @@
             <td class="exerciseName"><%= exercise.name %></td>
             <% for (var i = 0; i < exercise.sets; i++) { %>
               <td class="exerciseSets">
-                <input class="exerciseReps"></input>x<input class="exerciseWeight"></input>
+                <input class="exerciseReps"></input><span class="x">x</span><input class="exerciseWeight"></input>
               </td>
             <% } %>
           </tr>

@@ -1,0 +1,105 @@
+body {
+  background-image: url('/images/background.jpg');
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.logo {
+  width: 280px;
+  height: 100px;
+  margin: 0 auto;
+  background-image: url('/images/minilogo.png');
+}
+
+.main {
+  width: 280px;
+  margin: 25px auto;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px; /* future proofing */
+  -khtml-border-radius: 10px; /* for old Konqueror browsers */
+  opacity: 0.8;
+  background-color: white;
+  padding-bottom: 5px;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-bottom: 25px;
+}
+
+.x {
+  font-size: 6px;
+}
+
+input {
+  font-size: 6px;
+}
+
+table {
+  width: 280px;
+}
+
+iframe {
+  width: 280px;
+}
+
+th {
+  font-size: 12px;
+}
+
+.exerciseName {
+  font-size: 12px;
+}
+
+.exerciseWeight {
+  width: 25px;
+}
+
+.exerciseReps {
+  width: 25px;
+}
+
+.sessionContainer {
+  border-bottom: 2px solid grey;
+}
+
+h1 {
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+h2 {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 10px;
+  text-decoration: underline;
+  color: #0099CC;
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+
+p {
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+#mainNav {
+  width: 280px;
+  margin: 0 auto;
+}
+
+#createWorkout {
+  margin-right: 20px;
+}
+
+#selectWorkout {
+  margin-right: 15px;
+}
+
+#newWorkout {
+  margin-top: 20px;
+}
